@@ -3,6 +3,13 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
+
+/*function ContentController($scope, $ionicSideMenuDelegate) {
+  $scope.toggleLeft = function() {
+    $ionicSideMenuDelegate.toggleLeft();
+  };
+}
+*/
 angular.module('starter', ['ionic'])
 
 .run(function($ionicPlatform) {
@@ -17,3 +24,14 @@ angular.module('starter', ['ionic'])
     }
   });
 })
+
+angular.module('todo', ['ionic'])
+
+.controller('TodoCtrl', function($scope) {
+  $scope.tasks = [
+    { title: 'Collect coins' },
+    { title: 'Eat mushrooms' },
+    { title: 'Get high enough to grab the flag' },
+    { title: 'Find the Princess' }
+  ];
+});
